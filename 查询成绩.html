@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成绩查询系统</title>
+  <!--主界面的美化-->
+  <link rel="stylesheet" href="QueryResults/QueryResults.css">
+  <!--弹跳框的美化-->
+  <link rel="stylesheet" href="BounceBox/AddSubjectsBounceBox/AddSubjectsBounceBox.css"><!--添加科目弹跳框的美化-->
+  <link rel="stylesheet" href="BounceBox/AddclassBounceBox/AddclassBounceBox.css"><!--添加班级弹跳框的美化-->
+</head>
+<body>
+  <!-- 头部查询 -->
+  <header>
+    <div class="search-container">
+      <input id="SearchInput" name="Search" type="text" placeholder="请输入内容查询">
+      <button id="SearchButton" name="SearchButton">查询🔍</button>
+    </div>
+  </header>
+
+  <!-- 中间部分 -->
+  <main>
+    <div class="middle-content">
+      <div class="subject-selector">
+        <select id="subject">
+          <option value="Chinese">语文</option>
+          <option value="Mathematics" selected>数学</option>
+          <option value="English">英语</option>
+          <option value="Biology">生物</option>
+          <option value="Geography">地理</option>
+          <option value="Politics">政治</option>
+          <option value="history">历史</option>
+          <option value="Physics">物理</option>
+          <option value="Chemistry">化学</option>
+          <option value="AddSubject">添加</option>
+        </select>
+      </div>
+
+      <div class="recent-exams">
+        <h3>最近5次考试</h3>
+        <div id="Last5Exams" name="Last5Exams"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 跳出“添加”的弹跳框 -->
+  <div id="AddSubjectModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>添加科目</h2>
+      <label for="NewSubject">请输入新科目名称:</label>
+      <input type="text" id="NewSubject" name="NewSubject">
+      <div class="button-container">
+        <button id="AddSubjectButton" name="AddSubjectButton">添加</button>
+        <button id="CloseSubjectButton" name="CloseSubjectButton">关闭</button>
+      </div>
+      <form id="AddSubjectForm" name="AddSubjectForm"></form>
+    </div>
+  </div>
+
+  <!-- 主界面的操作 -->
+  <script src="QueryResults/QueryResults.js"></script>
+  <!-- 弹跳框的操作 -->
+  <script src="BounceBox/AddSlassBounceBox/AddSlassBounceBox.js"></script><!--添加科目弹跳框的操作-->
+  <script src="BounceBox/AddSubjectsBounceBox/AddSubjectsBounceBox.js"></script><!--添加班级弹跳框的操作-->
+</body>
+</html>
